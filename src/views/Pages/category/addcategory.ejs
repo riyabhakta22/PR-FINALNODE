@@ -1,0 +1,116 @@
+<%- include('../partials/Header.ejs') -%>
+
+
+  
+
+      <div class="page-wrapper">
+        <!-- Bread crumb and right sidebar toggle -->
+   
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Form Wizard</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- Start Page Content -->
+          <!-- <div class="card">
+            <div class="card-body wizard-content">
+              <h3 class="card-title mt-3">Add Category</h3>
+              <h5 class="card-subtitle mb-3">Create Category</h5>
+              <button class="btn btn-primary p-3 fs-4 "><a href="/addproduct" class="text-light link">Add Products</a></button>
+            </div> -->
+
+            <form action="" method="post">
+                <div class="col-6 p-5">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Create Category</label>
+                        <input type="text" class="form-control" name="name" placeholder="Add Categories">
+                      </div>
+                      <button class="btn btn-primary p-3 fs-4 text-light"> Create Category</button>
+                </div>
+
+            </form>
+
+
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Right sidebar -->
+          <!-- ============================================================== -->
+          <!-- .right-sidebar -->
+          <!-- ============================================================== -->
+          <!-- End Right sidebar -->
+          <!-- ============================================================== -->
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="../assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="../assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+      // Basic Example with form
+      var form = $("#example-form");
+      form.validate({
+        errorPlacement: function errorPlacement(error, element) {
+          element.before(error);
+        },
+        rules: {
+          confirm: {
+            equalTo: "#password",
+          },
+        },
+      });
+      form.children("div").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        onStepChanging: function (event, currentIndex, newIndex) {
+          form.validate().settings.ignore = ":disabled,:hidden";
+          return form.valid();
+        },
+        onFinishing: function (event, currentIndex) {
+          form.validate().settings.ignore = ":disabled";
+          return form.valid();
+        },
+        onFinished: function (event, currentIndex) {
+          alert("Submitted!");
+        },
+      });
+    </script>
+
+
