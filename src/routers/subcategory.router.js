@@ -1,11 +1,14 @@
 
 const {Router} = require('express')
-const subCatController = require('../controller/subCategory.con')
+const subCatController = require('../controller/subcategory.con')
 
 const subCatRouter = Router()
 
 subCatRouter.post('/create', subCatController.create)
 subCatRouter.get('/', subCatController.get)
 subCatRouter.get('/create', subCatController.form)
+subCatRouter.get('/delete/:id', subCatController.delete)
+subCatRouter.get('/edit/:id', subCatController.edit)
+subCatRouter.post('/edit/:id', subCatController.update)
 
 module.exports = subCatRouter
